@@ -6,6 +6,7 @@ Adrián Romero <adrian.agustin.romero@proton.me>; Dylan Ponce <dylan18ponce2323@
 :title-page:
 :title-logo-image: image::ungs.jpg[]
 :source-highlighter: coderay
+:pdf-theme: ./tokyo-theme.yml
 
 == Memoria
 
@@ -100,4 +101,47 @@ algunos conceptos teóricos necesarios para su correcta aplicación. Estas
 dificultades fueron superadas mediante la revisión de los contenidos vistos en
 clase, lo que permitió resolver adecuadamente el punto de memoria.
 
+<<<
+
 == Planificadores
+
+Se tiene un sistema con un scheduler de tipo Round Robin. +
+El quantum es de 20 unidades de tiempo. +
+Las operaciones de I/O consumen 30 unidades de tiempo. +
+El context switch tiene un coste de 0.5 unidades.
+
+Los procesos llegan al mismo tiempo, por lo que debe aplicarse un criterio para
+saber quién se ejecuta primero. En este caso, podemos pensar que el scheduler 
+en caso de empate aplica un desempate por el PID. Al proceso 1, llamado a 
+partir de ahora P1, le asignamos como PID un valor de 3644. Proceso 2, P2, un 
+valor de 8030. +
+
+La información de los procesos es la siguiente:
+
+- P1 se ejecuta 20 unidades, realiza I/O, y luego ejecuta 10 unidades antes de 
+  terminar.
+- P2 se ejecuta 60 unidades de tiempo y termina.
+
+Para facilitar la visualización del diagrama de Gantt, se utilizará una escala 
+de 10. +
+Los siguientes colores indican el estado del proceso:
+
+- [red]#Realizando operaciones de I/O#
+- [yellow]#En la cola de listo#
+- [green]#Ejecutándose#
+
+.Diagrama de Gantt para los procesos P1 y P2
+image::gantt.png[Diagrama de Gantt]
+
+.Ejecución de los procesos con Round Robin.
+- T0: [P1, P2]
+- T10: [P1, P2]
+- T20: [P2, P1]
+- T30: [P2, P1]
+- T40: [P2, P1]
+- T50: [P2, P1]
+- T60: [P1, P2]
+- T70: [P2]
+- T80: [P2]
+
+// TODO: realizar cálculo de retorno para cada proceso.

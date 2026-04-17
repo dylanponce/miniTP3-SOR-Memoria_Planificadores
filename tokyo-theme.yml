@@ -1,0 +1,8 @@
+extends: default
+role:
+  red:
+    font_color: #f7768e
+  green:
+    font_color: #9ece6a
+  yellow:
+    font_color: #e0af68
