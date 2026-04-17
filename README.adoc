@@ -126,9 +126,9 @@ Para facilitar la visualización del diagrama de Gantt, se utilizará una escala
 de 10. +
 Los siguientes colores indican el estado del proceso:
 
-- [red]#Realizando operaciones de I/O#
-- [yellow]#En la cola de listo#
-- [green]#Ejecutándose#
+- [red]#Rojo:# Realizando operaciones de I/O
+- [yellow]#Amarillo:# En la cola de listo
+- [green]#Verde:# Ejecutándose
 
 .Diagrama de Gantt para los procesos P1 y P2
 image::gantt.png[Diagrama de Gantt]
