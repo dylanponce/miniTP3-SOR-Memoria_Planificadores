@@ -101,8 +101,6 @@ algunos conceptos teóricos necesarios para su correcta aplicación. Estas
 dificultades fueron superadas mediante la revisión de los contenidos vistos en
 clase, lo que permitió resolver adecuadamente el punto de memoria.
 
-<<<
-
 == Planificadores
 
 Se tiene un sistema con un scheduler de tipo Round Robin. +
@@ -144,4 +142,8 @@ image::gantt.png[Diagrama de Gantt]
 - T70: [magenta]#P2#
 - T80: [magenta]#P2#
 
-// TODO: realizar cálculo de retorno para cada proceso.
+El tiempo de retorno para cada proceso sigue la fórmula
+`Retorno = Espera + Ejecución + I/O + Context Switch`
+
+* P1 = 10 + 30 + 30 + 0.5 = 70.5
+* P2 = 30 + 60 + 0 + 0.5 = 90.5
