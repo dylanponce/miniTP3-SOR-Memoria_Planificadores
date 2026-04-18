@@ -66,7 +66,7 @@ arriba. Por lo tanto, el proceso requiere un total de 16391 páginas.
 Sí, existe fragmentación interna.
 
 Esto se debe a que el tamaño del proceso no es múltiplo exacto del tamaño de
-página, lo que provoca que la última página asignada no se utilice 
+página, lo que provoca que la última página asignada no se utilice
 completamente.
 
 En este caso, solo se utilizan 3.2 KB de la última página, quedando sin usar
@@ -111,18 +111,18 @@ Las operaciones de I/O consumen 30 unidades de tiempo. +
 El context switch tiene un coste de 0.5 unidades.
 
 Los procesos llegan al mismo tiempo, por lo que debe aplicarse un criterio para
-saber quién se ejecuta primero. En este caso, podemos pensar que el scheduler 
-en caso de empate aplica un desempate por el PID. Al proceso 1, llamado a 
-partir de ahora P1, le asignamos como PID un valor de 3644. Proceso 2, P2, un 
+saber quién se ejecuta primero. En este caso, podemos pensar que el scheduler
+en caso de empate aplica un desempate por el PID. Al proceso 1, llamado a
+partir de ahora [cyan]#P1#, le asignamos como PID un valor de 3644. Proceso 2, [magenta]#P2#, un
 valor de 8030. +
 
 La información de los procesos es la siguiente:
 
-- P1 se ejecuta 20 unidades, realiza I/O, y luego ejecuta 10 unidades antes de 
+- [cyan]#P1# se ejecuta 20 unidades, realiza I/O, y luego ejecuta 10 unidades antes de
   terminar.
-- P2 se ejecuta 60 unidades de tiempo y termina.
+- [magenta]#P2# se ejecuta 60 unidades de tiempo y termina.
 
-Para facilitar la visualización del diagrama de Gantt, se utilizará una escala 
+Para facilitar la visualización del diagrama de Gantt, se utilizará una escala
 de 10. +
 Los siguientes colores indican el estado del proceso:
 
@@ -130,18 +130,18 @@ Los siguientes colores indican el estado del proceso:
 - [yellow]#Amarillo:# En la cola de listo
 - [green]#Verde:# Ejecutándose
 
-.Diagrama de Gantt para los procesos P1 y P2
+.Diagrama de Gantt para los procesos [cyan]#P1# y [magenta]#P2#
 image::gantt.png[Diagrama de Gantt]
 
 .Ejecución de los procesos con Round Robin.
-- T0: [P1, P2]
-- T10: [P1, P2]
-- T20: [P2, P1]
-- T30: [P2, P1]
-- T40: [P2, P1]
-- T50: [P2, P1]
-- T60: [P1, P2]
-- T70: [P2]
-- T80: [P2]
+- T00: [cyan]#P1#, [magenta]#P2#
+- T10: [cyan]#P1#, [magenta]#P2#
+- T20: [magenta]#P2#, [cyan]#P1#
+- T30: [magenta]#P2#, [cyan]#P1#
+- T40: [magenta]#P2#, [cyan]#P1#
+- T50: [magenta]#P2#, [cyan]#P1#
+- T60: [cyan]#P1#, [magenta]#P2#
+- T70: [magenta]#P2#
+- T80: [magenta]#P2#
 
 // TODO: realizar cálculo de retorno para cada proceso.

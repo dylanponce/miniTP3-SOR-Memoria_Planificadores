@@ -1,8 +1,17 @@
 extends: default
 role:
   red:
-    font_color: #f7768e
+    font_color: #ffffff
+    background-color: #f7768e
   green:
-    font_color: #9ece6a
+    font_color: #ffffff
+    background-color: #9ece6a
   yellow:
-    font_color: #e0af68
+    font_color: #ffffff
+    background-color: #e0af68
+  cyan:
+    font_color: #ffffff
+    background-color: #7dcfff
+  magenta:
+    font_color: #ffffff
+    background-color: #bb9af7
