@@ -134,10 +134,10 @@ image::gantt.png[Diagrama de Gantt]
 .Ejecución de los procesos con Round Robin.
 - T00: [cyan]#P1#, [magenta]#P2#
 - T10: [cyan]#P1#, [magenta]#P2#
-- T20: [magenta]#P2#, [cyan]#P1#
-- T30: [magenta]#P2#, [cyan]#P1#
-- T40: [magenta]#P2#, [cyan]#P1#
-- T50: [magenta]#P2#, [cyan]#P1#
+- T20: [magenta]#P2# ([cyan]#P1# realiza I/O)
+- T30: [magenta]#P2#
+- T40: [magenta]#P2#
+- T50: [magenta]#P2#, [cyan]#P1# (regresa de I/O a la cola de listo)
 - T60: [cyan]#P1#, [magenta]#P2#
 - T70: [magenta]#P2#
 - T80: [magenta]#P2#
@@ -145,5 +145,5 @@ image::gantt.png[Diagrama de Gantt]
 El tiempo de retorno para cada proceso sigue la fórmula
 `Retorno = Espera + Ejecución + I/O + Context Switch`
 
-* P1 = 10 + 30 + 30 + 0.5 = 70.5
-* P2 = 30 + 60 + 0 + 0.5 = 90.5
+* P1 = 10 + 30 + 30 + 1.5 = 71.5
+* P2 = 30 + 60 + 0 + 2.0 = 92.0
